@@ -1,7 +1,5 @@
 #ifdef CONFIG_OPPO_CAMERA
 #include <media/msm_cam_sensor_oppo.h>
-#elif defined(CONFIG_OPPO_CAMERA_50)
-#include <media/msm_cam_sensor_oppo_50.h>
 #else
 
 #ifndef __LINUX_MSM_CAM_SENSOR_H
@@ -459,7 +457,7 @@ struct msm_eeprom_cfg_data {
 	enum eeprom_cfg_type_t cfgtype;
 	uint8_t is_supported;
 	union {
-		char eeprom_name[MAX_SENSOR_NAME];
+		char eeprom_name[MAX_EEPROM_NAME];
 		struct eeprom_get_t get_data;
 		struct eeprom_read_t read_data;
 		struct eeprom_write_t write_data;
@@ -702,5 +700,4 @@ struct sensor_init_cfg_data {
 #define MSM_V4L2_PIX_FMT_META v4l2_fourcc('M', 'E', 'T', 'A') /* META */
 
 #endif /* __LINUX_MSM_CAM_SENSOR_H */
-
 #endif
